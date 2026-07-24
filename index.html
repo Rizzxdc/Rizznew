@@ -3,17 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Always Rizz Official Account</title>
+  <title>Always Rizz - Bio Link</title>
   
-  <!-- Favicon (logo di tab browser) -->
   <link rel="icon" type="image/jpg" href="logo.jpg">
-  
-  <!-- Font Google (Plus Jakarta Sans) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-  
-  <!-- Icon FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
@@ -36,7 +31,7 @@
       overflow-x: hidden;
     }
 
-    /* ===== LOADING OVERLAY ===== */
+    /* ===== LOADING ===== */
     .loader-overlay {
       position: fixed;
       top: 0;
@@ -99,7 +94,7 @@
       50% { opacity: 0.4; }
     }
 
-    /* ===== CONTAINER CARD ===== */
+    /* ===== CONTAINER ===== */
     .container {
       width: 100%;
       max-width: 400px;
@@ -113,6 +108,7 @@
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 0.8s ease 1.2s forwards;
+      position: relative;
     }
 
     @keyframes fadeInUp {
@@ -122,7 +118,117 @@
       }
     }
 
-    /* ===== AVATAR / LOGO ===== */
+    /* ===== MENU KIRI ===== */
+    .menu-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .menu-btn:hover {
+      background: #e2e8f0;
+      transform: scale(1.05);
+    }
+
+    .menu-btn .line {
+      width: 20px;
+      height: 2.5px;
+      background: #0f172a;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* ===== SIDE MENU ===== */
+    .side-menu {
+      position: absolute;
+      top: 68px;
+      left: 20px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 16px 20px;
+      min-width: 200px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(-10px) scale(0.95);
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 20;
+    }
+
+    .side-menu.open {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      visibility: visible;
+    }
+
+    .side-menu .menu-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .side-menu .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 8px;
+      border-radius: 10px;
+      color: #0f172a;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+    }
+
+    .side-menu .menu-item:hover {
+      background: #f1f5f9;
+    }
+
+    .side-menu .menu-item i {
+      width: 20px;
+      color: #6366f1;
+      font-size: 1rem;
+    }
+
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+      display: none;
+    }
+
+    .menu-overlay.active {
+      display: block;
+    }
+
+    /* ===== AVATAR ===== */
     .avatar-wrapper {
       position: relative;
       width: 100px;
@@ -164,7 +270,7 @@
       margin-bottom: 32px;
     }
 
-    /* Links / Buttons Section */
+    /* ===== LINKS ===== */
     .links-wrapper {
       display: flex;
       flex-direction: column;
@@ -227,7 +333,6 @@
       transform: translateY(-1px);
     }
 
-    /* ===== ICON ANTENA (SATELIT) ===== */
     .link-card.antenna i.left-icon {
       color: #34d399;
     }
@@ -241,7 +346,6 @@
       box-shadow: 0 10px 20px -5px rgba(52, 211, 153, 0.2);
     }
 
-    /* ===== ICON TIKTOK ===== */
     .link-card.tiktok i.left-icon {
       color: #f472b6;
     }
@@ -255,7 +359,7 @@
       box-shadow: 0 10px 20px -5px rgba(244, 114, 182, 0.2);
     }
 
-    /* ===== SOCIAL BUTTONS (BULAT) ===== */
+    /* ===== SOCIAL ===== */
     .social-row {
       display: flex;
       justify-content: center;
@@ -297,17 +401,33 @@
       box-shadow: 0 8px 20px -5px rgba(0, 136, 204, 0.3);
     }
 
-    /* Footer */
     .footer {
       margin-top: 32px;
       font-size: 0.75rem;
       color: #94a3b8;
     }
+
+    @media (max-width: 480px) {
+      .side-menu {
+        min-width: 180px;
+        left: 16px;
+        top: 62px;
+      }
+      .menu-btn {
+        top: 16px;
+        left: 16px;
+        width: 36px;
+        height: 36px;
+      }
+      .menu-btn .line {
+        width: 18px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- ===== LOADING OVERLAY ===== -->
+  <!-- ===== LOADING ===== -->
   <div class="loader-overlay" id="loaderOverlay">
     <div class="wave-container">
       <div class="wave-bar"></div>
@@ -324,7 +444,26 @@
   <!-- ===== MAIN CONTENT ===== -->
   <div class="container">
 
-    <!-- ===== AVATAR (pake logo.jpg) ===== -->
+    <!-- HAMBURGER MENU -->
+    <div class="menu-btn" id="menuBtn">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </div>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="sideMenu">
+      <div class="menu-title">✦ Menu</div>
+      <a href="products.html" class="menu-item">
+        <i class="fa-solid fa-box"></i>
+        <span>All Products by Always Rizz</span>
+      </a>
+    </div>
+
+    <!-- OVERLAY -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- AVATAR -->
     <div class="avatar-wrapper">
       <img src="logo.jpg" alt="Logo Always Rizz" class="avatar">
       <span class="status-badge" title="Online"></span>
@@ -333,9 +472,8 @@
     <h1 class="name">Always Rizz</h1>
     <p class="bio">All Saluran Real Always Rizz ✦</p>
 
-    <!-- 3 Tombol Utama -->
+    <!-- 3 Tombol -->
     <div class="links-wrapper">
-      
       <a href="https://whatsapp.com/channel/0029VbCo5zqB4hdWoU88fV0S" class="link-card antenna" target="_blank">
         <i class="fa-solid fa-satellite left-icon"></i>
         <span>Saluran Information Always Rizz</span>
@@ -353,31 +491,49 @@
         <span>Akun Tiktok Utama Always Rizz</span>
         <i class="fa-solid fa-arrow-right arrow-icon"></i>
       </a>
-
     </div>
 
-    <!-- Social Buttons -->
+    <!-- Social -->
     <div class="social-row">
       <a href="https://wa.me/6282113877157" class="social-btn whatsapp" target="_blank" title="WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
       </a>
-      <a href="https://t.me/Rizznotdevcuy" class="social-btn telegram" target="_blank" title="Telegram">
+      <a href="https://t.me/AlwaysRizz" class="social-btn telegram" target="_blank" title="Telegram">
         <i class="fa-brands fa-telegram-plane"></i>
       </a>
     </div>
 
     <div class="footer">
-      © 2026 • Always Rizz Official
+      © 2026 • Always Riz Official
     </div>
   </div>
 
   <script>
-    // Hilangkan loading setelah 2 detik
+    // LOADING
     document.addEventListener('DOMContentLoaded', function() {
       setTimeout(function() {
-        const loader = document.getElementById('loaderOverlay');
-        loader.classList.add('hidden');
+        document.getElementById('loaderOverlay').classList.add('hidden');
       }, 2000);
+    });
+
+    // MENU
+    const menuBtn = document.getElementById('menuBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    const overlay = document.getElementById('menuOverlay');
+
+    function toggleMenu() {
+      sideMenu.classList.toggle('open');
+      overlay.classList.toggle('active');
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    document.addEventListener('click', function(e) {
+      if (!sideMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+        sideMenu.classList.remove('open');
+        overlay.classList.remove('active');
+      }
     });
   </script>
 
