@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product 2 - Always Rizz</title>
+  
+  <link rel="icon" type="image/jpg" href="logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #f8fafc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: #0f172a;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 400px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 28px;
+      padding: 40px 28px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      position: relative;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      color: #0f172a;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: #e2e8f0;
+      transform: scale(1.05);
+    }
+
+    .detail-icon {
+      font-size: 3rem;
+      margin-bottom: 8px;
+    }
+
+    .detail-name {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .detail-desc {
+      font-size: 0.95rem;
+      color: #64748b;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .detail-price {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #6366f1;
+      margin-bottom: 16px;
+    }
+
+    /* ===== PESAN TIDAK TERSEDIA ===== */
+    .unavailable-box {
+      padding: 20px 16px;
+      background: #fef3c7;
+      border: 2px solid #f59e0b;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .unavailable-box .unavailable-icon {
+      font-size: 3rem;
+      margin-bottom: 6px;
+    }
+
+    .unavailable-box .unavailable-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #92400e;
+      margin-bottom: 4px;
+    }
+
+    .unavailable-box .unavailable-desc {
+      font-size: 0.9rem;
+      color: #78350f;
+      line-height: 1.5;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .detail-btn {
+      display: inline-block;
+      padding: 12px 32px;
+      background: #f59e0b;
+      color: #ffffff;
+      border: none;
+      border-radius: 14px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: not-allowed;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      opacity: 0.7;
+    }
+
+    .footer {
+      margin-top: 28px;
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 32px 16px;
+        border-radius: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <a href="products.html" class="back-btn">
+      <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <div class="detail-icon">🚀</div>
+    <div class="detail-name">Product 2 - Always Rizz</div>
+    <div class="detail-desc">Produk kedua dengan fitur premium. Dapatkan sekarang sebelum kehabisan!</div>
+    <div class="detail-price">Rp 75.000</div>
+
+    <!-- ===== PESAN TIDAK TERSEDIA ===== -->
+    <div class="unavailable-box">
+      <div class="unavailable-icon">⏳</div>
+      <div class="unavailable-title">Produk Sedang Belum Tersedia</div>
+      <div class="unavailable-desc">Mohon maaf, Product 2 sedang dalam tahap pengembangan. Silakan cek kembali nanti.</div>
+    </div>
+
+    <button class="detail-btn" disabled>Beli Sekarang</button>
+
+    <div class="footer">
+      © 2026 • Always Rizz Official
+    </div>
+  </div>
+
+</body>
+</html>
